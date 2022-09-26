@@ -2,12 +2,12 @@
 
 _term() {
   echo "Caught SIGTERM signal!"
-  wg-quick down wg0
+  wg-quick down tun0
 }
 
 trap _term SIGTERM
 
-wg-quick up wg0
+wg-quick up tun0
 
 sleep infinity &
 
